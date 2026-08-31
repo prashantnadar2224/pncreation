@@ -28,7 +28,7 @@ export const Route = createFileRoute("/why-choose-us")({
       },
     ],
   }),
-  component: WhyChooseUs;
+  component: WhyChooseUs,
 });
 
 function WhyChooseUs() {
