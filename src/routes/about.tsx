@@ -90,7 +90,7 @@ function About() {
       </section>
 
       <CTABand
-        title="Let&apos;s build something you're proud to share."
+        title="Let's build something you're proud to share."
         subtitle="Send over your idea and I'll come back with a clear plan, timeline and price."
       />
     </>
