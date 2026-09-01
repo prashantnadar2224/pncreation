@@ -194,7 +194,7 @@ Thank you,`;
           <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
             Free consultation, preview before delivery and on-time handover on every project.
           </p>
-        </aside>
+        </Reveal>
       </div>
     </section>
   );
