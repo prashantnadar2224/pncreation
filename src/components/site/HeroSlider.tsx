@@ -32,7 +32,7 @@ export function HeroSlider() {
     return () => window.clearInterval(id);
   }, [paused, index]);
 
-  const current = slides[index];
+  const current = slides[index] ?? slides[0]!;
 
   return (
     <div
