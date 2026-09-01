@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact PN Creation for websites, landing pages and design work. Call +91 96533 86506, WhatsApp or email prashantnadar2223@gmail.com for a free consultation.",
+          "Contact PN Creation for websites, landing pages and design work. Call +91 96533 86506, WhatsApp or email hello.pncreation@gmail.com for a free consultation.",
       },
       { property: "og:title", content: "Contact PN Creation" },
       {
@@ -41,20 +41,33 @@ function Contact() {
   const [service, setService] = useState(services[0]);
   const [details, setDetails] = useState("");
 
-  const message = encodeURIComponent(
-    `Hello PN Creation!\n\nName: ${name || "-"}\nService: ${service}\nDetails: ${details || "-"}`,
-  );
+  const plainMessage = `Hello PN Creation,
+
+I would like to discuss a project with you.
+
+Name: ${name || "-"}
+Service needed: ${service}
+Details: ${details || "-"}
+
+Thank you,`;
+  const message = encodeURIComponent(plainMessage);
+  const emailHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+    `Project Enquiry — ${service}`,
+  )}&body=${message}`;
 
   return (
     <section className="container-page pt-16 sm:pt-20">
-      <SectionHeading
-        eyebrow="Let's Work Together"
-        title="Tell me about your"
-        highlight="project"
-        description="Fill in a few details and send it straight to my WhatsApp or email — you'll get a reply with a clear plan, timeline and price."
-      />
+      <Reveal>
+        <SectionHeading
+          eyebrow="Let's Work Together"
+          title="Tell me about your"
+          highlight="project"
+          description="Fill in a few details and send it straight to my WhatsApp or email — you'll get a reply with a clear plan, timeline and price."
+        />
+      </Reveal>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+
         <form
           className="surface-card min-w-0 p-7"
           onSubmit={(e) => {
