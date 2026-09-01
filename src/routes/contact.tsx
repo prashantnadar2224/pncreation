@@ -154,19 +154,17 @@ Thank you,`;
               </a>
             </li>
             <li>
-              <a
-                href="mailto:prashantnadar2223@gmail.com"
-                className="flex items-center gap-3 hover:text-gold"
-              >
+              <a href={emailHref} className="flex items-center gap-3 hover:text-gold">
                 <Mail className="h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
                 <span className="min-w-0">
                   <span className="block text-xs tracking-widest text-muted-foreground uppercase">
                     Email
                   </span>
-                  <span className="break-all">prashantnadar2223@gmail.com</span>
+                  <span className="break-all">{CONTACT_EMAIL}</span>
                 </span>
               </a>
             </li>
+
             <li>
               <a
                 href="https://prashant-nadar.vercel.app/"
