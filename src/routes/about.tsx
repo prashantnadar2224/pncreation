@@ -58,7 +58,7 @@ function About() {
 
           <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
             {[
-              { label: "Based in", value: "Navi Mumbai, MH" },
+              { label: "Based in", value: "Mumbai, MH" },
               { label: "Founded by", value: "Prashant Nadar" },
               { label: "Focus", value: "Design • Develop • Grow" },
             ].map((s) => (

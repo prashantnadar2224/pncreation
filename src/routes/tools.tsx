@@ -95,7 +95,7 @@ function QrTool() {
 }
 
 function SlugTool() {
-  const [text, setText] = useState("Best Web Designer in Navi Mumbai");
+  const [text, setText] = useState("Best Web Designer in Mumbai");
   const slug = useMemo(
     () =>
       text

@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "PN Creation builds fast, responsive websites, landing pages, portfolios and complete digital setups for businesses in Navi Mumbai and beyond.",
+          "PN Creation builds fast, responsive websites, landing pages, portfolios and complete digital setups for businesses in Mumbai and beyond.",
       },
       { name: "author", content: "Prashant Nadar — PN Creation" },
       { name: "theme-color", content: "#0d2318" },

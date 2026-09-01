@@ -72,7 +72,7 @@ export function Footer() {
 
       <div className="border-t border-border/60 py-5">
         <p className="container-page text-xs text-muted-foreground">
-          © {new Date().getFullYear()} PN Creation — Founded by Prashant Nadar. Navi Mumbai,
+          © {new Date().getFullYear()} PN Creation — Founded by Prashant Nadar. Mumbai,
           Maharashtra.
         </p>
       </div>
