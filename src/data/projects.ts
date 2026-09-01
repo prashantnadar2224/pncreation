@@ -417,7 +417,6 @@ export const PROJECTS: Project[] = [
       ],
     },
   },
-
   {
     slug: "pinpoint-tattooz",
     title: "Pinpoint Tattooz",
