@@ -26,8 +26,11 @@ export function Header() {
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              className="rounded-md px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-gold"
-              activeProps={{ className: "text-gold" }}
+              className="relative rounded-md px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-gold"
+              activeProps={{
+                className:
+                  "text-gold bg-secondary/70 ring-1 ring-gold/40 after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-primary",
+              }}
             >
               {item.label}
             </Link>
@@ -39,6 +42,7 @@ export function Header() {
             <Phone className="h-4 w-4" aria-hidden="true" /> Let&apos;s Talk
           </a>
         </nav>
+
 
         <button
           type="button"
@@ -59,8 +63,9 @@ export function Header() {
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 text-base font-semibold text-muted-foreground hover:bg-secondary hover:text-gold"
-              activeProps={{ className: "text-gold bg-secondary" }}
+              className="rounded-lg border border-transparent px-3 py-3 text-base font-semibold text-muted-foreground hover:bg-secondary hover:text-gold"
+              activeProps={{ className: "text-gold bg-secondary border-gold/40" }}
+
             >
               {item.label}
             </Link>
