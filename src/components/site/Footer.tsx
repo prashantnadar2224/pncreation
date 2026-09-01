@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Globe, Mail, Phone } from "lucide-react";
+import { CONTACT_EMAIL, mailtoHref } from "@/lib/contact";
 import { Logo } from "./Logo";
+
 
 export function Footer() {
   return (
@@ -47,12 +49,13 @@ export function Footer() {
             <li>
               <a
                 className="inline-flex items-center gap-2 break-all hover:text-gold"
-                href="mailto:prashantnadar2223@gmail.com"
+                href={mailtoHref()}
               >
                 <Mail className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                prashantnadar2223@gmail.com
+                {CONTACT_EMAIL}
               </a>
             </li>
+
             <li>
               <a
                 className="inline-flex items-center gap-2 hover:text-gold"

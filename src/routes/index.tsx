@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Code2,
@@ -12,6 +13,9 @@ import {
   Sparkles,
 } from "lucide-react";
 import { CTABand, FeatureCard, SectionHeading } from "@/components/site/ui";
+import { HeroSlider } from "@/components/site/HeroSlider";
+import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,7 +49,12 @@ function Home() {
     <>
       <section className="container-page pt-16 pb-8 sm:pt-24">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
-          <div className="min-w-0">
+          <motion.div
+            className="min-w-0"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
             <p className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-3 py-1 text-[0.7rem] font-bold tracking-[0.2em] text-gold uppercase">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" /> Design • Develop • Grow
             </p>
@@ -82,58 +91,84 @@ function Home() {
                 </div>
               ))}
             </dl>
-          </div>
+          </motion.div>
 
-          <div className="surface-card gold-ring min-w-0 p-6 sm:p-8">
-            <h2 className="text-xl">What you get with every project</h2>
-            <ul className="mt-5 grid gap-4 text-sm">
-              {[
-                "Custom design shaped around your brand, not a template",
-                "Preview before final delivery — no surprises",
-                "Mobile-first layouts tested on real device widths",
-                "On-page SEO, metadata and performance tuning",
-                "Ongoing maintenance and support when you need it",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                  <span className="text-muted-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 inline-flex items-center gap-2 text-xs tracking-wide text-gold uppercase">
-              <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Navi Mumbai, Maharashtra
-            </p>
-          </div>
+          <motion.div
+            className="min-w-0"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <HeroSlider />
+          </motion.div>
         </div>
       </section>
 
       <section className="container-page mt-24">
-        <SectionHeading
-          eyebrow="Core Services"
-          title="Everything you need to"
-          highlight="go live and grow"
-          description="From the first pixel to long-term maintenance — one place for your complete online presence."
-        />
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <FeatureCard icon={<Globe2 className="h-5 w-5" />} title="Website Development">
-            Fast, secure and scalable business and portfolio websites with clean, optimized code.
-          </FeatureCard>
-          <FeatureCard icon={<Rocket className="h-5 w-5" />} title="Landing Pages That Convert">
-            High-converting pages with clear messaging built to turn visitors into customers.
-          </FeatureCard>
-          <FeatureCard icon={<Layers className="h-5 w-5" />} title="Design & Creatives">
-            Resumes, invitations, social media posts, banners and video edits with a premium finish.
-          </FeatureCard>
-          <FeatureCard icon={<MapPin className="h-5 w-5" />} title="Google Business Profile">
-            Profile creation and optimization so local customers find you on Search and Maps.
-          </FeatureCard>
-          <FeatureCard icon={<ShieldCheck className="h-5 w-5" />} title="Website Maintenance">
-            Updates, security monitoring, backups, bug fixes and performance tuning.
-          </FeatureCard>
-          <FeatureCard icon={<Sparkles className="h-5 w-5" />} title="Free Online Tools">
-            QR codes, slug builder and content counter — use them right here on the site.
-          </FeatureCard>
-        </div>
+        <Reveal className="surface-card gold-ring p-6 sm:p-8">
+          <h2 className="text-xl">What you get with every project</h2>
+          <ul className="mt-5 grid gap-4 text-sm sm:grid-cols-2">
+            {[
+              "Custom design shaped around your brand, not a template",
+              "Preview before final delivery — no surprises",
+              "Mobile-first layouts tested on real device widths",
+              "On-page SEO, metadata and performance tuning",
+              "Ongoing maintenance and support when you need it",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+                <span className="text-muted-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 inline-flex items-center gap-2 text-xs tracking-wide text-gold uppercase">
+            <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Navi Mumbai, Maharashtra
+          </p>
+        </Reveal>
+      </section>
+
+      <section className="container-page mt-24">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Core Services"
+            title="Everything you need to"
+            highlight="go live and grow"
+            description="From the first pixel to long-term maintenance — one place for your complete online presence."
+          />
+        </Reveal>
+        <RevealGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <RevealItem className="h-full">
+            <FeatureCard icon={<Globe2 className="h-5 w-5" />} title="Website Development">
+              Fast, secure and scalable business and portfolio websites with clean, optimized code.
+            </FeatureCard>
+          </RevealItem>
+          <RevealItem className="h-full">
+            <FeatureCard icon={<Rocket className="h-5 w-5" />} title="Landing Pages That Convert">
+              High-converting pages with clear messaging built to turn visitors into customers.
+            </FeatureCard>
+          </RevealItem>
+          <RevealItem className="h-full">
+            <FeatureCard icon={<Layers className="h-5 w-5" />} title="Design & Creatives">
+              Resumes, invitations, social media posts, banners and video edits with a premium
+              finish.
+            </FeatureCard>
+          </RevealItem>
+          <RevealItem className="h-full">
+            <FeatureCard icon={<MapPin className="h-5 w-5" />} title="Google Business Profile">
+              Profile creation and optimization so local customers find you on Search and Maps.
+            </FeatureCard>
+          </RevealItem>
+          <RevealItem className="h-full">
+            <FeatureCard icon={<ShieldCheck className="h-5 w-5" />} title="Website Maintenance">
+              Updates, security monitoring, backups, bug fixes and performance tuning.
+            </FeatureCard>
+          </RevealItem>
+          <RevealItem className="h-full">
+            <FeatureCard icon={<Sparkles className="h-5 w-5" />} title="Free Online Tools">
+              QR codes, slug builder and content counter — use them right here on the site.
+            </FeatureCard>
+          </RevealItem>
+        </RevealGroup>
         <div className="mt-8 text-center">
           <Link
             to="/services"
@@ -143,6 +178,7 @@ function Home() {
           </Link>
         </div>
       </section>
+
 
       <CTABand
         title="Your business deserves to be found."
