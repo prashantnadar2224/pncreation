@@ -10,6 +10,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import { CTABand, FeatureCard, SectionHeading } from "@/components/site/ui";
+import { Projects } from "@/components/site/projects";
+
 
 export const Route = createFileRoute("/why-choose-us")({
   head: () => ({
@@ -97,7 +99,7 @@ function WhyChooseUs() {
           ))}
         </div>
       </section>
-
+      <Projects />
       <CTABand
         title="We maintain today, you grow tomorrow."
         subtitle="Ready to be found, trusted and chosen? Let's talk about your project."
