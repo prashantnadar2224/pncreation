@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Globe, Mail, Phone } from "lucide-react";
+import { Mail, Phone, Heart, MessageCircle } from "lucide-react";
 import { CONTACT_EMAIL, mailtoHref } from "@/lib/contact";
 import { Logo } from "./Logo";
-
 
 export function Footer() {
   return (
@@ -59,11 +58,12 @@ export function Footer() {
             <li>
               <a
                 className="inline-flex items-center gap-2 hover:text-gold"
-                href="https://prashant-nadar.vercel.app/"
+                href="https://wa.me/91XXXXXXXXXX?text=Hi%20Prashant%2C%20I%20found%20PN%20Creation%20and%20I%27d%20like%20to%20discuss%20a%20website%20project."
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <Globe className="h-4 w-4 text-gold" aria-hidden="true" /> Portfolio Website
+                <MessageCircle className="h-4 w-4 text-gold" aria-hidden="true" />
+                Chat on WhatsApp
               </a>
             </li>
           </ul>
@@ -71,9 +71,31 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border/60 py-5">
+        {/* <p className="container-page text-xs text-muted-foreground">
+          © {new Date().getFullYear()} PN Creation — Founded by{" "}
+          <a
+            className="inline-flex items-center gap-2 hover:underline underline-offset-3 text-gold"
+            href="https://prashant-nadar.vercel.app/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Prashant Nadar.
+          </a>{" "}
+        </p> */}
         <p className="container-page text-xs text-muted-foreground">
-          © {new Date().getFullYear()} PN Creation — Founded by Prashant Nadar. Mumbai,
-          Maharashtra.
+          © {new Date().getFullYear()} PN Creation — Made with{" "}
+          <span className="mx-1 text-lg inline-block text-red-500 animate-pulse" aria-label="love">
+            <Heart className="h-4 w-4 fill-red-500" aria-hidden="true" />
+          </span>{" "}
+          by{" "}
+          <a
+            className="font-medium text-gold transition-colors hover:text-gold/80 hover:underline underline-offset-4"
+            href="https://prashant-nadar.vercel.app/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Prashant Nadar
+          </a>
         </p>
       </div>
     </footer>

@@ -9,10 +9,9 @@ export function Projects() {
         <section id="projects" className="container-page mt-24 sm:mt-28">
             <Reveal>
                 <div className="mx-auto max-w-2xl text-center">
-                    <p className="text-xs font-bold tracking-[0.28em] text-gold uppercase">
-                        Projects
+                    <p title={`Project Count:- ${PROJECTS?.length}`} className="text-lg font-bold tracking-[0.28em] animate-pulse hover:animate-none hover:scale-120 text-gold uppercase">
+                        Projects({PROJECTS?.length})
                     </p>
-
                     <h2 className="mt-3 text-3xl leading-tight sm:text-4xl">
                         Selected{" "}
                         <span className="text-gold-gradient">work.</span>
@@ -25,9 +24,9 @@ export function Projects() {
                 </div>
             </Reveal>
 
-            <RevealGroup className="mt-12 grid gap-6 lg:grid-cols-2" stagger={0.1}>
+            <RevealGroup className="mt-12 grid gap-6 lg:grid-cols-2">
                 {PROJECTS.map((project) => (
-                    <RevealItem
+                    <div
                         key={project.slug}
                         className={project.featured ? "lg:col-span-2" : ""}
                     >
@@ -189,7 +188,7 @@ export function Projects() {
                                         </motion.a>
                                     ) : null}
 
-                                    {project.github ? (
+                                    {/* {project.github ? (
                                         <motion.a
                                             href={project.github}
                                             target="_blank"
@@ -206,11 +205,11 @@ export function Projects() {
                                             />
                                             GitHub
                                         </motion.a>
-                                    ) : null}
+                                    ) : null} */}
                                 </div>
                             </div>
                         </motion.article>
-                    </RevealItem>
+                    </div>
                 ))}
             </RevealGroup>
         </section>

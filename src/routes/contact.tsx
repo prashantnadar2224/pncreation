@@ -17,8 +17,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact PN Creation" },
       {
         property: "og:description",
-        content:
-          "Call, WhatsApp or email PN Creation for a free project consultation.",
+        content: "Call, WhatsApp or email PN Creation for a free project consultation.",
       },
     ],
   }),
@@ -56,7 +55,6 @@ function Contact() {
     setDetails("");
     setErrors({});
   };
-
 
   /**
    * Name validation:
@@ -248,11 +246,7 @@ Thank you,`;
       return;
     }
 
-    window.open(
-      `https://wa.me/919653386506?text=${message}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+    window.open(`https://wa.me/919653386506?text=${message}`, "_blank", "noopener,noreferrer");
   };
 
   const handleEmail = () => {
@@ -275,11 +269,7 @@ Thank you,`;
       </Reveal>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-        <form
-          className="surface-card min-w-0 p-7"
-          onSubmit={handleWhatsApp}
-          noValidate
-        >
+        <form className="surface-card min-w-0 p-7" onSubmit={handleWhatsApp} noValidate>
           <div className="grid gap-5">
             {/* Name */}
             <div className="grid gap-2">
@@ -297,18 +287,13 @@ Thank you,`;
                 autoComplete="name"
                 aria-invalid={Boolean(errors.name)}
                 aria-describedby={errors.name ? "name-error" : undefined}
-                className={`rounded-lg border bg-background px-4 py-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring ${errors.name
-                  ? "border-red-500 focus-visible:ring-red-500"
-                  : "border-input"
-                  }`}
+                className={`rounded-lg border bg-background px-4 py-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  errors.name ? "border-red-500 focus-visible:ring-red-500" : "border-input"
+                }`}
               />
 
               {errors.name && (
-                <p
-                  id="name-error"
-                  className="text-sm text-red-500"
-                  role="alert"
-                >
+                <p id="name-error" className="text-sm text-red-500" role="alert">
                   {errors.name}
                 </p>
               )}
@@ -330,18 +315,13 @@ Thank you,`;
                 autoComplete="email"
                 aria-invalid={Boolean(errors.email)}
                 aria-describedby={errors.email ? "email-error" : undefined}
-                className={`rounded-lg border bg-background px-4 py-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring ${errors.email
-                  ? "border-red-500 focus-visible:ring-red-500"
-                  : "border-input"
-                  }`}
+                className={`rounded-lg border bg-background px-4 py-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  errors.email ? "border-red-500 focus-visible:ring-red-500" : "border-input"
+                }`}
               />
 
               {errors.email && (
-                <p
-                  id="email-error"
-                  className="text-sm text-red-500"
-                  role="alert"
-                >
+                <p id="email-error" className="text-sm text-red-500" role="alert">
                   {errors.email}
                 </p>
               )}
@@ -359,15 +339,14 @@ Thank you,`;
                 value={service}
                 onChange={(e) => handleServiceChange(e.target.value)}
                 aria-invalid={Boolean(errors.service)}
-                aria-describedby={
-                  errors.service ? "service-error" : undefined
-                }
-                className={`rounded-lg border bg-background px-4 py-3 text-sm text-gray-300 outline-none focus-visible:ring-2 focus-visible:ring-ring ${errors.service
-                  ? "border-red-500 focus-visible:ring-red-500"
-                  : "border-input"
-                  }`}
+                aria-describedby={errors.service ? "service-error" : undefined}
+                className={`rounded-lg border bg-background px-4 py-3 text-sm text-gray-300 outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  errors.service ? "border-red-500 focus-visible:ring-red-500" : "border-input"
+                }`}
               >
-                <option value="" className="text-white">Select an option...</option>
+                <option value="" className="text-white">
+                  Select an option...
+                </option>
 
                 {services.map((s) => (
                   <option key={s} value={s}>
@@ -377,11 +356,7 @@ Thank you,`;
               </select>
 
               {errors.service && (
-                <p
-                  id="service-error"
-                  className="text-sm text-red-500"
-                  role="alert"
-                >
+                <p id="service-error" className="text-sm text-red-500" role="alert">
                   {errors.service}
                 </p>
               )}
@@ -395,10 +370,9 @@ Thank you,`;
                 </label>
 
                 <span
-                  className={`text-xs ${details.length >= 500
-                    ? "text-red-500"
-                    : "text-muted-foreground"
-                    }`}
+                  className={`text-xs ${
+                    details.length >= 500 ? "text-red-500" : "text-muted-foreground"
+                  }`}
                 >
                   {details.length}/500
                 </span>
@@ -414,21 +388,14 @@ Thank you,`;
                 maxLength={500}
                 placeholder="A short description of your business and what you want to achieve."
                 aria-invalid={Boolean(errors.details)}
-                aria-describedby={
-                  errors.details ? "details-error" : undefined
-                }
-                className={`rounded-lg border bg-background px-4 py-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring ${errors.details
-                  ? "border-red-500 focus-visible:ring-red-500"
-                  : "border-input"
-                  }`}
+                aria-describedby={errors.details ? "details-error" : undefined}
+                className={`rounded-lg border bg-background px-4 py-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  errors.details ? "border-red-500 focus-visible:ring-red-500" : "border-input"
+                }`}
               />
 
               {errors.details && (
-                <p
-                  id="details-error"
-                  className="text-sm text-red-500"
-                  role="alert"
-                >
+                <p id="details-error" className="text-sm text-red-500" role="alert">
                   {errors.details}
                 </p>
               )}
@@ -444,10 +411,7 @@ Thank you,`;
                 type="submit"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-transform hover:scale-[1.03]"
               >
-                <MessageCircle
-                  className="h-4 w-4"
-                  aria-hidden="true"
-                />
+                <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 Send on WhatsApp
               </button>
 
@@ -459,7 +423,8 @@ Thank you,`;
                 <Send className="h-4 w-4" aria-hidden="true" />
                 Send by Email
               </button>
-              <button title="Clear Form"
+              <button
+                title="Clear Form"
                 type="button"
                 onClick={handleClear}
                 className="inline-flex items-center gap-2 rounded-full border border-input px-6 py-3 text-sm font-bold text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
@@ -470,23 +435,13 @@ Thank you,`;
           </div>
         </form>
 
-        <Reveal
-          as="section"
-          className="surface-card min-w-0 p-7"
-          delay={0.05}
-        >
+        <Reveal as="section" className="surface-card min-w-0 p-7" delay={0.05}>
           <h2 className="text-lg">Direct contact</h2>
 
           <ul className="mt-5 grid gap-4 text-sm">
             <li>
-              <a
-                href="tel:+919653386506"
-                className="flex items-center gap-3 hover:text-gold"
-              >
-                <Phone
-                  className="h-5 w-5 shrink-0 text-gold"
-                  aria-hidden="true"
-                />
+              <a href="tel:+919653386506" className="flex items-center gap-3 hover:text-gold">
+                <Phone className="h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
 
                 <span>
                   <span className="block text-xs tracking-widest text-muted-foreground uppercase">
@@ -520,10 +475,7 @@ Thank you,`;
                 href={mailtoHref()}
                 className="flex w-full items-center gap-3 text-left hover:text-gold"
               >
-                <Mail
-                  className="h-5 w-5 shrink-0 text-gold"
-                  aria-hidden="true"
-                />
+                <Mail className="h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
 
                 <span className="min-w-0">
                   <span className="block text-xs tracking-widest text-muted-foreground uppercase">
@@ -533,8 +485,36 @@ Thank you,`;
                   <span className="break-all">{CONTACT_EMAIL}</span>
                 </span>
               </a>
-
             </li>
+
+ <li>
+              <a
+                href="https://wa.me/91XXXXXXXXXX?text=Hi%20Prashant%2C%20I%20found%20PN%20Creation%20and%20I%27d%20like%20to%20discuss%20a%20website%20project."
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex items-center gap-3 hover:text-gold"
+              >
+                <MessageCircle className="h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+
+                <span>
+                  <span className="block text-xs tracking-widest text-muted-foreground uppercase">
+                    Whatsapp
+                  </span>
+                  +91 96533 86506
+                </span>
+              </a>
+            </li>
+            {/* <li>
+              <a
+                className="inline-flex items-center gap-2 hover:text-gold"
+                href="https://wa.me/91XXXXXXXXXX?text=Hi%20Prashant%2C%20I%20found%20PN%20Creation%20and%20I%27d%20like%20to%20discuss%20a%20website%20project."
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <MessageCircle className="h-4 w-4 text-gold" aria-hidden="true" />
+                Chat on WhatsApp
+              </a>
+            </li> */}
 
             <li>
               <a
@@ -543,40 +523,31 @@ Thank you,`;
                 rel="noreferrer noopener"
                 className="flex items-center gap-3 hover:text-gold"
               >
-                <Globe
-                  className="h-5 w-5 shrink-0 text-gold"
-                  aria-hidden="true"
-                />
+                <Globe className="h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
 
                 <span>
                   <span className="block text-xs tracking-widest text-muted-foreground uppercase">
                     Portfolio
                   </span>
-
                   prashant-nadar.vercel.app
                 </span>
               </a>
             </li>
 
             <li className="flex items-center gap-3">
-              <MapPin
-                className="h-5 w-5 shrink-0 text-gold"
-                aria-hidden="true"
-              />
+              <MapPin className="h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
 
               <span>
                 <span className="block text-xs tracking-widest text-muted-foreground uppercase">
                   Location
                 </span>
-
                 Goregaon East, Mumbai, Maharashtra 400065.
               </span>
             </li>
           </ul>
 
           <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-            Free consultation, preview before delivery and on-time handover on
-            every project.
+            Free consultation, preview before delivery and on-time handover on every project.
           </p>
         </Reveal>
       </div>

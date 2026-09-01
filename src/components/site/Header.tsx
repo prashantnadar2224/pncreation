@@ -27,11 +27,10 @@ export function Header() {
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
               className="relative rounded-md px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-gold"
-              activeProps={{
-                className:
-                  "text-gold bg-secondary/70 ring-1 ring-gold/40 after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-primary",
-              }}
-            >
+             activeProps={{
+  className:
+    "!text-gold bg-secondary/70 after:absolute after:inset-x-2 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-primary",
+}}>
               {item.label}
             </Link>
           ))}
