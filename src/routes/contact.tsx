@@ -139,7 +139,7 @@ Thank you,`;
           </div>
         </form>
 
-        <aside className="surface-card min-w-0 p-7">
+        <Reveal as="section" className="surface-card min-w-0 p-7" delay={0.05}>
           <h2 className="text-lg">Direct contact</h2>
           <ul className="mt-5 grid gap-4 text-sm">
             <li>
