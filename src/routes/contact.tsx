@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Globe, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { SectionHeading } from "@/components/site/ui";
+import { Reveal } from "@/components/site/Reveal";
+import { CONTACT_EMAIL } from "@/lib/contact";
+
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
