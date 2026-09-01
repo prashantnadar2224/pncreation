@@ -130,9 +130,7 @@ Thank you,`;
                 <MessageCircle className="h-4 w-4" aria-hidden="true" /> Send on WhatsApp
               </button>
               <a
-                href={`mailto:prashantnadar2223@gmail.com?subject=${encodeURIComponent(
-                  `Project enquiry — ${service}`,
-                )}&body=${message}`}
+                href={emailHref}
                 className="inline-flex items-center gap-2 rounded-full border border-gold/50 px-6 py-3 text-sm font-bold text-gold transition-colors hover:bg-secondary"
               >
                 <Send className="h-4 w-4" aria-hidden="true" /> Send by Email
