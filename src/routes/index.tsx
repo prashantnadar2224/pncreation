@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Code2,
@@ -12,6 +13,9 @@ import {
   Sparkles,
 } from "lucide-react";
 import { CTABand, FeatureCard, SectionHeading } from "@/components/site/ui";
+import { HeroSlider } from "@/components/site/HeroSlider";
+import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
