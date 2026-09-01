@@ -100,18 +100,18 @@ export function Projects() {
                             {/* Project information */}
                             <div className="flex flex-1 flex-col p-6 sm:p-7">
                                 <h3
-                                    id={`project-${project.slug}-title`}
+                                    id={`project-${project?.slug}-title`}
                                     className="text-xl font-semibold text-balance sm:text-2xl"
                                 >
-                                    {project.title}
+                                    {project?.title}
                                 </h3>
 
                                 <p className="mt-1 text-sm font-medium text-primary">
-                                    {project.subtitle}
+                                    {project?.subtitle}
                                 </p>
 
                                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                                    {project.overview}
+                                    {project?.overview}
                                 </p>
 
                                 {/* Key highlights */}
