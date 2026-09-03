@@ -12,7 +12,8 @@ export async function hashIP(ip: string): Promise<string> {
 }
 
 export async function getVisitorFingerprint(): Promise<{ ip: string; ipHash: string; dayBucket: string }> {
-  const ip: string = getRequestIP({ xForwardedFor: true }) ?? "unknown";
+  const rawIP = getRequestIP({ xForwardedFor: true });
+  const ip = String(rawIP ?? "unknown");
   const ipHash = await hashIP(ip);
   const dayBucket = new Date().toISOString().split("T")[0];
   return { ip, ipHash, dayBucket };
