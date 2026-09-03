@@ -1,23 +1,19 @@
+import { createHash } from "crypto";
 import { getRequestIP } from "@tanstack/react-start/server";
 
 const IMAGE_DAILY_LIMIT = 5;
 const VIDEO_DAILY_LIMIT = 1;
 
-export async function hashIP(ip: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(ip);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+export function hashIP(ip: string): string {
+  return createHash("sha256").update(ip).digest("hex");
 }
 
-export async function getVisitorFingerprint(): Promise<{ ip: string; ipHash: string; dayBucket: string }> {
+export function getVisitorFingerprint(): { ip: string; ipHash: string; dayBucket: string } {
   const rawIP = getRequestIP();
   const ip = String(rawIP ?? "unknown");
-  const ipHash = await hashIP(ip);
+  const ipHash = hashIP(ip);
   const dayBucket = new Date().toISOString().split("T")[0];
-  const result: { ip: string; ipHash: string; dayBucket: string } = { ip, ipHash, dayBucket };
-  return result;
+  return { ip, ipHash, dayBucket };
 }
 
 export type CreditStatus = {
