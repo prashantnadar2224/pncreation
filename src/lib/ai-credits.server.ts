@@ -16,7 +16,8 @@ export async function getVisitorFingerprint(): Promise<{ ip: string; ipHash: str
   const ip = String(rawIP ?? "unknown");
   const ipHash = await hashIP(ip);
   const dayBucket = new Date().toISOString().split("T")[0];
-  return { ip, ipHash, dayBucket };
+  const result: { ip: string; ipHash: string; dayBucket: string } = { ip, ipHash, dayBucket };
+  return result;
 }
 
 export type CreditStatus = {
